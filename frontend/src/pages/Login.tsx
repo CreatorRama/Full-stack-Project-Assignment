@@ -41,7 +41,7 @@ const Login = () => {
     if (error) {
       const timer = setTimeout(() => {
         reset();
-      }, 2000); // Hide after 5 seconds
+      }, 2000); 
       return () => clearTimeout(timer);
     }
   }, [error, reset]);
