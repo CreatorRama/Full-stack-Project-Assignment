@@ -82,25 +82,50 @@ model User {
 
 4. Set up the database
    ```bash
-   npx prisma migrate dev --name init
+   npx prisma generate
+   npx prisma migrate dev 
    # This will:
    # - Create the database if it doesn't exist
    # - Apply migrations
    # - Generate Prisma Client
    ```
 
-## Running the Project Locally
+## Running the Project
 
-1. Start the server
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+### Development Mode
 
-2. The API will be available at `http://localhost:3001/api`
+To run the project in development mode with hot-reloading:
+```bash
+npm run dev
+```
+
+This will start the server using nodemon, which automatically restarts when file changes are detected.
+
+### Production Build
+
+To build the project for production:
+```bash
+npm run build
+```
+
+This will compile TypeScript files to JavaScript in the `dist` directory.
+
+### Production Mode
+
+To run the compiled project:
+```bash
+npm start
+```
+
+## Scripts
+
+- `npm run dev` - Run the project in development mode
+- `npm run build` - Build the project for production
+- `npm start` - Run the compiled project
+
 
 ## API Endpoints
+ The API will be available at `http://localhost:3001/api`
 
 ### Authentication
 
