@@ -89,8 +89,9 @@ const registerSchema = loginSchema;
         });
         // console.log(user)
         if (!user) {
-            return res.status(401).json({ message: "Email is wrong or Kindly register" });
+            throw new AppError("Email is wrong or Kindly register", 401);
         }
+        
 
         // Check password
         const isPasswordValid = await comparePassword(password, user.password);
